@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Real-Time Weather App</title>
+  <link rel="stylesheet" href="style.css">
+  <!-- Include jQuery from CDN -->
+  <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+</head>
+<body>
+  <header>
+    <h1>Weather Finder</h1>
+  </header>
+  
+  <!-- Weather Search Section -->
+  <section id="weather-section">
+    <form id="weather-form">
+      <input type="text" id="city-input" placeholder="Enter city name e.g. London" required>
+      <button type="submit">Get Weather</button>
+    </form>
+    <!-- Loading Indicator -->
+    <div id="loading" style="display:none;">
+      <img src="assets/spinner.gif" alt="Loading..." />
+      <span>Loading...</span>
+    </div>
+    <!-- Weather Result Display -->
+    <div id="weather-result"></div>
+  </section>
+  
+  <!-- Feedback/Contact Form -->
+  <section id="feedback-section">
+    <h2>Feedback Form</h2>
+    <form id="feedback-form">
+      <input type="text" id="name" placeholder="Your Name" required>
+      <input type="email" id="email" placeholder="Your Email" required>
+      <textarea id="message" placeholder="Your Message" required></textarea>
+      <button type="submit">Send Feedback</button>
+    </form>
+    <div id="feedback-msg"></div>
+  </section>
+  
+  <script src="app.js"></script>
+</body>
+</html>

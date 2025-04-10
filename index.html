@@ -7,17 +7,34 @@
   <link rel="stylesheet" href="style.css">
   <!-- Include jQuery from CDN -->
   <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+  <!-- Font Awesome for weather icons -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
 </head>
 <body>
   <header>
     <h1>Weather Finder</h1>
+    <div class="theme-toggle">
+      <button id="theme-toggle-btn"><i class="fas fa-moon"></i></button>
+    </div>
   </header>
   
   <!-- Weather Search Section -->
   <section id="weather-section">
     <form id="weather-form">
-      <input type="text" id="city-input" placeholder="Enter city name e.g. London" required>
-      <button type="submit">Get Weather</button>
+      <div class="search-container">
+        <input type="text" id="city-input" placeholder="Enter city name e.g. London" required>
+        <button type="submit">Get Weather</button>
+      </div>
+      <div class="location-btn">
+        <button type="button" id="current-location"><i class="fas fa-location-dot"></i> Use Current Location</button>
+      </div>
+      <div class="unit-toggle">
+        <label>Temperature Unit:</label>
+        <div class="toggle-buttons">
+          <button type="button" id="celsius" class="active">°C</button>
+          <button type="button" id="fahrenheit">°F</button>
+        </div>
+      </div>
     </form>
     <!-- Loading Indicator -->
     <div id="loading" style="display:none;">
@@ -26,6 +43,11 @@
     </div>
     <!-- Weather Result Display -->
     <div id="weather-result"></div>
+    <!-- Forecast Display -->
+    <div id="forecast-container">
+      <h3 id="forecast-title" style="display:none;">5-Day Forecast</h3>
+      <div id="forecast-cards"></div>
+    </div>
   </section>
   
   <!-- Feedback/Contact Form -->
@@ -39,6 +61,10 @@
     </form>
     <div id="feedback-msg"></div>
   </section>
+  
+  <footer>
+    <p>Weather App &copy; 2025</p>
+  </footer>
   
   <script src="app.js"></script>
 </body>
